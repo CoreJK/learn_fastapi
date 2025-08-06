@@ -14,3 +14,15 @@ license = {text = "MIT"}
 [tool.pdm]
 distribution = false
 
+[tool.pdm.scripts]
+# 开发服务器启动命令
+dev = "uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8080"
+# 生产环境启动命令
+start = "uvicorn backend.app.main:app --host 0.0.0.0 --port 8080"
+# 测试命令
+test = "pytest backend/tests/ -v"
+# 格式化代码
+format = "black backend/"
+# 代码检查
+lint = "flake8 backend/"
+
